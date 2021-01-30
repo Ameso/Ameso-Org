@@ -36,7 +36,7 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  /* gap: 30px; */
   transition: right 0.25s ease;
   @media (max-width: 960px) {
     position: fixed;
@@ -52,6 +52,16 @@ const StyledNav = styled.nav`
     padding: 2rem;
     overflow: scroll;
     box-shadow: ${({ theme }) => theme.shadows.huge};
+  }
+
+  > * + * {
+    margin-left: 24px;
+  }
+
+  @media (max-width: 960px) {
+    > * + * {
+      margin-left: 0;
+    }
   }
 `
 
@@ -205,8 +215,7 @@ const Header = props => {
           style={{
             textDecoration: `none`
           }}
-        >
-        </StyledHomeLink>
+        ></StyledHomeLink>
       </StyledNavTitleWrapper>
       <MenuToggle ref={button} open={isMenuOpen} onClick={() => updateIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? <StyledCloseIcon /> : <StyledMenuIcon />}

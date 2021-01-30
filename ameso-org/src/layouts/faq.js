@@ -89,11 +89,7 @@ const StyledPageTitle = styled.div`
 `
 
 const Docs = props => {
-
-  return (
-    <Layout path={props.location.pathname} isDocs={false}>
-    </Layout>
-  )
+  return <Layout path={props.location.pathname} isDocs={false}></Layout>
 }
 
 export default Docs
