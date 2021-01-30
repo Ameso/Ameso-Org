@@ -222,7 +222,7 @@ const Header = props => {
           {props.path && props.path !== '/' && props.path !== '' && (
             <>
               <StyledNavTitle to={'/' + props.path.split('/')[1]}>
-                {props.path.length > 20 ? 'Docs /' : 'Uniswap Docs /'}
+                {props.path.length > 20 ? 'Docs /' : 'Ameso Docs /'}
               </StyledNavTitle>
               <StyledNavTitle to={'/docs/' + props.path.split('/')[2]}>
                 {props.path.split('/')[2].replace(/(^|\s)\S/g, function(t) {
@@ -258,12 +258,12 @@ const Header = props => {
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </StyledButton>
           <StyledButton fill>
-            <a href="https://discord.gg/XErMcTq">
+            <a href="https://discord.gg/">
               <Discord />
             </a>
           </StyledButton>
           <StyledButton fill>
-            <a href="https://github.com/Uniswap">
+            <a href="https://github.com/Ameso">
               <Github width={20} />
             </a>
           </StyledButton>

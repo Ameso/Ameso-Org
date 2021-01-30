@@ -78,7 +78,7 @@ const IndexPage = props => {
       />
       <StyledBody>
         <StyledTitle>
-          <StyledBodyTitle>Ameso is a decentralized protocol for employment built on Ethereum.</StyledBodyTitle>
+          <StyledBodyTitle>Ameso is a decentralized marketplace for employment built on Ethereum.</StyledBodyTitle>
         </StyledTitle>
       </StyledBody>
     </Layout>

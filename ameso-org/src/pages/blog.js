@@ -131,88 +131,20 @@ export const NewPill = styled.p`
 `
 
 const Blog = props => {
-  const data = useStaticQuery(graphql`
-    {
-      allMdx(filter: { fileAbsolutePath: { regex: "/blog/" } }, sort: { order: DESC, fields: frontmatter___date }) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 250)
-            frontmatter {
-              date(formatString: "MMMM Do, YYYY")
-              title
-              previewText
-              featuredImage {
-                childImageSharp {
-                  fluid(maxWidth: 1200) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-            fields {
-              slug
-              readingTime {
-                text
-              }
-            }
-          }
-          next {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-            }
-          }
-          previous {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout path={props.location.pathname}>
-      <SEO title="Uniswap Blog" path={props.location.pathname} />
+      <SEO title="Ameso Blog" path={props.location.pathname} />
 
       <StyledBlog>
         <PageTitleWrapper>
-          <h2 style={{ fontSize: '56px' }}>Uniswap Blog</h2>
+          <h2 style={{ fontSize: '56px' }}>Ameso Blog</h2>
           <p>
-            News, stories, and announcements from Uniswap.{' '}
+            News, stories, and announcements from Ameso.{' '}
             <a style={{ paddingBottom: '1rem' }} href="/rss.xml" target="_blank">
               Subscribe
             </a>
           </p>
         </PageTitleWrapper>
-        <PostsWrapper>
-          {data.allMdx.edges.map(({ node }, index) => {
-            return (
-              <Posts wide={index} key={node.id}>
-                <PostLinkWrapper wide={index} to={node.fields.slug}>
-                  {index === 0 && <NewPill>New</NewPill>}
-                  <PostTitleWrapper>
-                    <h2 style={{ marginTop: '0px' }}>{node.frontmatter.title}</h2>
-
-                    {node.frontmatter.previewText ? <p>{node.frontmatter.previewText} </p> : ''}
-
-                    <PostMetaData>{node.frontmatter.date + ' - ' + node.fields.readingTime.text}</PostMetaData>
-                  </PostTitleWrapper>
-                  {node.frontmatter.featuredImage && (
-                    <StyledImage fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
-                  )}
-                </PostLinkWrapper>
-              </Posts>
-            )
-          })}
-        </PostsWrapper>
       </StyledBlog>
     </Layout>
   )

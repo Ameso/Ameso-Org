@@ -127,22 +127,6 @@ const MenuToggle = styled.button`
   }
 `
 
-const StyledUni = styled(Uni)`
-  path {
-    fill: ${({ theme }) => theme.textColor};
-  }
-  margin: 0;
-  width: 28px;
-  height: 28px;
-  margin-right: 0.35rem;
-  margin-top: -4px;
-  transform: rotate(0deg);
-  transition: transform 0.2s linear;
-  :hover {
-    transform: rotate(-10deg);
-  }
-`
-
 const StyledCloseIcon = styled(CloseIcon)`
   path {
     stroke: ${({ theme }) => theme.textColor};
@@ -222,7 +206,6 @@ const Header = props => {
             textDecoration: `none`
           }}
         >
-          <StyledUni />
         </StyledHomeLink>
       </StyledNavTitleWrapper>
       <MenuToggle ref={button} open={isMenuOpen} onClick={() => updateIsMenuOpen(!isMenuOpen)}>
@@ -238,7 +221,7 @@ const Header = props => {
           </StyledButton>
         </HideSmall>
 
-        {props.path !== undefined && <StyledTradeLink href="https://app.uniswap.org/">Launch App ↗</StyledTradeLink>}
+        {props.path !== undefined && <StyledTradeLink href="https://app.ameso.org/">Launch App ↗</StyledTradeLink>}
       </StyledNav>
     </StyledHeader>
   )

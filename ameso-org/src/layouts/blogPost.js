@@ -169,52 +169,12 @@ const StyledLink = styled(Link)`
 `
 
 const Blog = props => {
-  const data = useStaticQuery(graphql`
-    {
-      allMdx(filter: { fileAbsolutePath: { regex: "/blog/" } }, sort: { order: DESC, fields: frontmatter___date }) {
-        edges {
-          node {
-            id
-            headings {
-              value
-              depth
-            }
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-              topLevelDir
-              subDir
-            }
-          }
-          next {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-            }
-          }
-          previous {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout path={props.location.pathname}>
       <BG />
       <SEO
         title={props.pageContext.frontmatter.title}
-        site={'Uniswap Blog'}
+        site={'Ameso Blog'}
         description={props.pageContext.frontmatter.previewText}
         path={props.location.pathname}
       />
