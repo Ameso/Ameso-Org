@@ -189,34 +189,6 @@ const Blog = props => {
             </PostDate>
           </PostMetaData>
         </PostHeader>
-
-        <StyledMDX>{props.children}</StyledMDX>
-        {data.allMdx.edges
-          .filter(({ node }) => {
-            return node.fields.slug === props.path
-          })
-          .map(({ node, next, previous }) => {
-            return (
-              <StyledDocsNavWrapper key={node.id}>
-                <StyledDocsNav>
-                  {previous && (
-                    <StyledLink style={{ alignItems: 'flex-end' }} to={previous.fields.slug} rel="prev">
-                      <small>Previous</small>
-                      <span>← {previous.frontmatter.title}</span>
-                    </StyledLink>
-                  )}
-                </StyledDocsNav>
-                <StyledDocsNav>
-                  {next && (
-                    <StyledLink style={{ alignItems: 'flex-start' }} to={next.fields.slug} rel="next">
-                      <small>Next</small>
-                      <span>{next.frontmatter.title} →</span>
-                    </StyledLink>
-                  )}
-                </StyledDocsNav>
-              </StyledDocsNavWrapper>
-            )
-          })}
       </StyledBlog>
     </Layout>
   )
