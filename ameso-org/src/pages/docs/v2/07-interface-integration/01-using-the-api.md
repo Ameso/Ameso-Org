@@ -38,25 +38,24 @@ We need to set up some middleware in order to make requests to the Uniswap subgr
 1. Add the imports shown below and instantiate a new client instance. Notice how we use the link to the Uniswap subgraph here.
 
 ```javascript
-import React from "react"
-import "./App.css"
-import { ApolloClient } from "apollo-client"
-import { InMemoryCache } from "apollo-cache-inmemory"
-import { HttpLink } from "apollo-link-http"
+import React from 'react'
+import './App.css'
+import { ApolloClient } from 'apollo-client'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { HttpLink } from 'apollo-link-http'
 
 export const client = new ApolloClient({
- link: new HttpLink({
-   uri: "https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2"
- }),
- cache: new InMemoryCache(),
+  link: new HttpLink({
+    uri: 'https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2'
+  }),
+  cache: new InMemoryCache()
 })
 
 function App() {
- return <div></div>
+  return <div></div>
 }
 
 export default App
-
 ```
 
 2. We also need to add a context so that Apollo can handle requests properly. In your `index.js` file import the proper provider and wrap the root in it like this:

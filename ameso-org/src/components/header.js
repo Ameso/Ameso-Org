@@ -22,7 +22,7 @@ const StyledHeader = styled.header`
   padding: 2rem;
   width: 100%;
   z-index: 3;
-  background-image: ${({ theme }) => theme.navBG };
+  background-image: ${({ theme }) => theme.navBG};
   position: sticky;
   top: 0;
   @media (max-width: 960px) {

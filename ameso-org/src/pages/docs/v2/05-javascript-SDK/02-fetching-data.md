@@ -63,7 +63,7 @@ const tokenAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F' // must be che
 const DAI: Token = await Fetcher.fetchTokenData(chainId, tokenAddress)
 ```
 
-By default, this method will use the [default provider defined by ethers.js](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider). 
+By default, this method will use the [default provider defined by ethers.js](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider).
 If you're already using ethers.js in your application, you may pass in your provider as a 3rd argument.
 If you're using another library, you'll have to fetch the data separately.
 
@@ -74,13 +74,7 @@ Finally, we can talk about **symbol** and **name**. Because these fields aren't 
 ```typescript
 import { ChainId, Token } from '@uniswap/sdk'
 
-const DAI = new Token(
-  ChainId.MAINNET,
-  '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-  18,
-  'DAI',
-  'Dai Stablecoin'
-)
+const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai Stablecoin')
 ```
 
 or:
@@ -125,7 +119,9 @@ const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d
 async function getPair(): Promise<Pair> {
   const pairAddress = Pair.getAddress(DAI, WETH[DAI.chainId])
 
-  const reserves = [/* use pairAddress to fetch reserves here */]
+  const reserves = [
+    /* use pairAddress to fetch reserves here */
+  ]
   const [reserve0, reserve1] = reserves
 
   const tokens = [DAI, WETH[DAI.chainId]]

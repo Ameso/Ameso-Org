@@ -40,7 +40,7 @@ Finally, you may have noticed that we're formatting the price to 6 significant d
 
 ## Indirect
 
-For the sake of example, let's imagine a direct pair between DAI and WETH _doesn't exist_. In order to get a DAI-WETH mid price we'll need to pick a valid route. Imagine both DAI and WETH have pairs with a third token, USDC. In that case, we can calculate an indirect mid price through the USDC pairs: 
+For the sake of example, let's imagine a direct pair between DAI and WETH _doesn't exist_. In order to get a DAI-WETH mid price we'll need to pick a valid route. Imagine both DAI and WETH have pairs with a third token, USDC. In that case, we can calculate an indirect mid price through the USDC pairs:
 
 ```typescript
 import { ChainId, Token, WETH, Fetcher, Route } from '@uniswap/sdk'

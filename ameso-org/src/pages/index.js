@@ -27,15 +27,16 @@ const StyledBody = styled.div`
 
 const StyledTitle = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   will-change: transform;
-
+  justify-content: center;
+  text-align: center;
   @media (max-width: 960px) {
     margin: 0rem 0 1rem 0;
   }
 `
 
-const StyledBodyTitle = styled.h1`
+const StyledBodyTitle = styled.div`
   color: ${({ theme }) => theme.colors.textColor};
   font-size: 72px;
   margin: 4rem 0 3rem 0;
@@ -65,21 +66,6 @@ const StyledBodyTitle = styled.h1`
   }
 `
 
-const StyledNav = styled.nav`
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 32px;
-  transition: right 0.25s ease;
-  margin-left: 4rem;
-  @media (max-width: 960px) {
-    margin-left: 0rem;
-    gap: 12px;
-    flex-direction: column;
-  }
-`
-
 const IndexPage = props => {
   const isDark = useDarkMode()
 
@@ -92,16 +78,7 @@ const IndexPage = props => {
       />
       <StyledBody>
         <StyledTitle>
-          <StyledBodyTitle>
-            Ameso is a decentralized protocol for employment built on Ethereum.
-          </StyledBodyTitle>
-          <StyledNav>
-            <StyledExternalLink href={'https://app.ameso.org'}>
-              Use the app <span style={{ fontSize: '11px' }}>↗</span>
-            </StyledExternalLink>
-            <StyledLink to={'/docs/v2/'}>Read the docs</StyledLink>
-            <StyledLink to={'/faq'}>FAQ</StyledLink>
-          </StyledNav>
+          <StyledBodyTitle>Ameso is a decentralized protocol for employment built on Ethereum.</StyledBodyTitle>
         </StyledTitle>
       </StyledBody>
     </Layout>

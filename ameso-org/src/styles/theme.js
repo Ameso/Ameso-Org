@@ -62,7 +62,7 @@ export const theme = darkMode => ({
     blue7: darkMode ? '#C4D9F8' : '#144489',
     blue8: darkMode ? '#C4D9F8' : '#0E2F5E',
     blue9: darkMode ? '#C4D9F8' : '#191B1F',
-    
+
     grey6: darkMode ? '#888D9B' : '#565A69',
     grey7: darkMode ? '#CED0D9' : '#40444F',
     grey8: darkMode ? '#EDEEF2' : '#2C2F36',
