@@ -117,80 +117,10 @@ function List(props) {
 }
 
 const SideBar = props => {
-  const data = useStaticQuery(graphql`
-    query {
-      topNavDocsV1: allDirectory(
-        filter: { sourceInstanceName: { eq: "docs" }, relativeDirectory: { eq: "v1" } }
-        sort: { fields: name, order: ASC }
-      ) {
-        edges {
-          node {
-            name
-            id
-            relativePath
-          }
-        }
-      }
-      topNavDocsV2: allDirectory(
-        filter: { sourceInstanceName: { eq: "docs" }, relativeDirectory: { eq: "v2" } }
-        sort: { fields: name, order: ASC }
-      ) {
-        edges {
-          node {
-            name
-            id
-            relativePath
-          }
-        }
-      }
-      docsV1: allMdx(
-        filter: { fileAbsolutePath: { regex: "/docs/v1/" } }
-        sort: { order: ASC, fields: fileAbsolutePath }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-              subDir
-              topLevelDir
-            }
-            fileAbsolutePath
-          }
-        }
-      }
-      docsV2: allMdx(
-        filter: { fileAbsolutePath: { regex: "/docs/v2/" } }
-        sort: { order: ASC, fields: fileAbsolutePath }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-              subDir
-              topLevelDir
-            }
-            fileAbsolutePath
-          }
-        }
-      }
-    }
-  `)
+  const navData = data.topNavDocsV1
+  const listData = data.docsV1
 
-  // get global version and check if v2 or not
-  const v2Toggle = props.path.slice(0, 8) === '/docs/v2'
-
-  const navData = v2Toggle ? data.topNavDocsV2 : data.topNavDocsV1
-  const listData = v2Toggle ? data.docsV2 : data.docsV1
-
-  const atTopLevel = props.path === '/docs/v1/' || props.path === '/docs/v2/'
+  const atTopLevel = props.path === '/docs/v1/'
 
   return (
     <StyledSidebar>
@@ -199,7 +129,7 @@ const SideBar = props => {
           <StyledLink
             isActive={atTopLevel}
             style={{ marginBottom: '.25rem', display: 'inline-block', padding: !atTopLevel && '0px' }}
-            to={`/docs/${v2Toggle ? 'v2' : 'v1'}/`}
+            to={`/docs/v1/`}
           >
             Introduction
           </StyledLink>
@@ -207,7 +137,7 @@ const SideBar = props => {
           <StyledLink
             isActive={atTopLevel}
             style={{ marginBottom: '1rem', display: 'inline-block', padding: !atTopLevel && '0px', fontSize: '14px' }}
-            to={`/docs/${v2Toggle ? 'v2' : 'v1'}/`}
+            to={`/docs/v1/`}
           >
             {'← Home'}
           </StyledLink>
@@ -224,7 +154,7 @@ const SideBar = props => {
               path={props.path}
               parent={props.parent}
               atTopLevel={atTopLevel}
-              topLevel={v2Toggle ? '/docs/v2' : '/docs/v1'}
+              topLevel='/docs/v1'
             />
           ))}
       </ListWrapper>

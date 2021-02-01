@@ -79,7 +79,7 @@ const StyledTradeLink = styled.a`
   display: inline-block;
   transition: transform 0.25s ease;
   font-weight: 400;
-  font-family: 'GT Haptik Regular';
+  font-family: 'Lato';
 
   transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
 

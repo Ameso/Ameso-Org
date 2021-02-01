@@ -30,7 +30,7 @@ const StyledFooter = styled.footer`
   position: relative;
   padding: 0 2rem;
   margin: 0 4rem 7rem 4rem;
-  font-family: 'GT Haptik Regular';
+  font-family: 'Lato';
   /* border-top: 1px solid ${({ theme }) => theme.textColor}; */
 
   @media (max-width: 960px) {
