@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '.'
-import SidebarV2 from '../components/sidebarV2'
 import SidebarV1 from '../components/sidebarV1'
 import SEO from '../components/seo'
 import TableofContents from '../components/toc'
@@ -126,59 +125,6 @@ const StyledGithubLink = styled.a`
 `
 
 const Docs = props => {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          commit
-          repository
-        }
-      }
-      allMdx(filter: { fileAbsolutePath: { regex: "/docs/" } }, sort: { order: ASC, fields: fileAbsolutePath }) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 40)
-            headings {
-              value
-              depth
-            }
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-              subDir
-              rawSlug
-              parentDir
-            }
-          }
-          next {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-              subDir
-              parentDir
-              topLevelDir
-            }
-          }
-          previous {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-              parentDir
-              subDir
-              topLevelDir
-            }
-          }
-        }
-      }
-    }
-  `)
   const isV1 = props.path.slice(0, 8) === '/docs/v1'
 
   const isMobile = useMediaQuery('(max-width: 960px)')
@@ -209,7 +155,7 @@ const Docs = props => {
           )
         })}
       <StyledDocs id="docs-header">
-        {!isMobile && (isV1 ? <SidebarV1 parent={'/docs/'} {...props} /> : <SidebarV2 parent={'/docs/'} {...props} />)}
+        <SidebarV1 parent={'/docs/'} {...props} />
         <StyledMDX>
           <StyledPageTitle>
             <small style={{ marginBottom: '.5rem' }}>

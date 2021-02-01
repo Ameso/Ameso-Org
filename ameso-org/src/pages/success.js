@@ -61,30 +61,12 @@ const Title = styled.h1`
 `
 
 const Success = props => {
-  const data = useStaticQuery(graphql`
-    {
-      unicornImage: file(relativePath: { eq: "uni_image.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout path={props.location.pathname} nofooter={true}>
       <SEO title="Success" path={props.location.pathname} />
       <StyledAbout>
         <StyledSectionFlex style={{ flexDirection: 'column', paddingBottom: '0px' }}>
           <Title style={{ width: '100%' }}>You are now subscribed.</Title>
-          <p>
-            {"We'll be in touch soon. You can always unsubscribe"}
-            <a href="https://uniswap.us19.list-manage.com/unsubscribe?u=c93471c1443f1e6365b5ca093&id=7d591bff13">
-              {' here.'}
-            </a>
-          </p>
           <Link to="/">Back home</Link>
         </StyledSectionFlex>
       </StyledAbout>

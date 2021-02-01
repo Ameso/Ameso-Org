@@ -29,7 +29,7 @@ const MarqueeWrapper = styled.a`
 
 const Stats = styled.span`
   color: ${({ theme }) => theme.textColor};
-  font-family: 'GT Haptik Regular';
+  font-family: 'Lato';
   background-color: transparent;
   padding: 0rem 0.5rem;
   align-items: center;

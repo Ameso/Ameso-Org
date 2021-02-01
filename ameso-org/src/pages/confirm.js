@@ -61,18 +61,6 @@ const Title = styled.h1`
 `
 
 const Confirm = props => {
-  const data = useStaticQuery(graphql`
-    {
-      unicornImage: file(relativePath: { eq: "uni_image.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout path={props.location.pathname} nofooter={true}>
       <SEO title="Confirm" path={props.location.pathname} />

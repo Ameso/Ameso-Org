@@ -18,7 +18,7 @@ export const CardNoise = styled.span`
 `
 
 export const StyledLink = styled(Link)`
-  font-family: 'GT Haptik Regular';
+  font-family: 'Lato';
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -40,7 +40,7 @@ export const StyledLink = styled(Link)`
   }
 `
 export const StyledExternalLink = styled.a`
-  font-family: 'GT Haptik Regular';
+  font-family: 'Lato';
   margin: 0;
   padding: 0;
   text-decoration: none;

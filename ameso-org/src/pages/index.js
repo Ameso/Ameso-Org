@@ -43,9 +43,9 @@ const StyledBodyTitle = styled.div`
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
-  max-width: 1000px;
+  max-width: 1200px;
   letter-spacing: -0.05em;
-  font-family: 'GT Haptik', 'Times New Roman', serif;
+  font-family: 'PT Sans', 'Times New Roman', serif;
   @media (max-width: 1024px) {
     margin: 2rem 0 3rem 0;
   }

@@ -22,7 +22,7 @@ const StyledMenu = styled.button`
   border: none;
   text-align: left;
   list-style: none;
-  font-family: 'GT Haptik Regular';
+  font-family: 'PT Sans';
 
   /* padding-right: 2rem; */
   background: none;
@@ -90,7 +90,7 @@ const StyledMenuTitle = styled.span`
   margin: 0px;
   border-radius: 0.5rem;
   font-weight: 400;
-  font-family: 'GT Haptik Regular';
+  font-family: 'PT Sans';
   width: fit-content;
   font-size: 16px;
 
@@ -113,7 +113,7 @@ const StyledMenuItem = styled.span`
   text-decoration: none;
   margin: 0px;
   border-radius: 0.5rem;
-  font-family: 'GT Haptik Regular';
+  font-family: 'PT Sans';
   width: fit-content;
 
   :hover {
